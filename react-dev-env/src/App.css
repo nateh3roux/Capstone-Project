@@ -10,5 +10,22 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Work Sans", sans-serif;
+}
+
+#image-card-div {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+
+#image-card-img {
+  width: 200px;
+  height: 200px;
+}
+
+#categories-list{
+  display: flex;
+  justify-content: space-around;
+  flex-flow: wrap;
 }

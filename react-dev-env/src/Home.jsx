@@ -1,5 +1,6 @@
 import "./App.css";
 import { useState, useEffect } from "react";
+import ImageCard from "./ImageCard";
 
 const Home = () => {
   let [type, setType] = useState([]);
@@ -16,9 +17,9 @@ const Home = () => {
   return (
     <div>
       <h1>Byte Categories</h1>;
-      <section id="type-list">
+      <section id="categories-list">
         {type.map((product, index) => (
-          <li key={index}>{product.typeName}</li>
+          <ImageCard key={index} imageUrl={product.imageUrl} name={product.typeName}></ImageCard>
         ))}
       </section>
     </div>
