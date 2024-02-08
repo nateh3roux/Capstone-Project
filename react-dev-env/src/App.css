@@ -1,0 +1,14 @@
+#site-title {
+  color: darkblue;
+  text-align: center;
+  font-family: "Satisfy", cursive;
+  font-size: 3em;
+}
+
+.nav-bar-ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-family: 'Work Sans', sans-serif;
+}
