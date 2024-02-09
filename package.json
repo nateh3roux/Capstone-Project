@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
-  "name": "capstone-project",
-=======
   "name": "capstoneproject",
->>>>>>> a05c306055388bd60cacfd689d19ea30effe66eb
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -11,11 +7,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js"
   },
-<<<<<<< HEAD
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-=======
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gaelencarroll25/Capstone-Project.git"
@@ -29,7 +20,6 @@
   "dependencies": {
     "axios": "^1.6.7",
     "body-parser": "^1.20.2",
->>>>>>> a05c306055388bd60cacfd689d19ea30effe66eb
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "mongodb": "^6.3.0",

@@ -1,36 +1,4 @@
 [
-<<<<<<< HEAD
-{
-  "types": [
-    {
-      "id": 1,
-      "typeName": "bread",
-      "imageUrl": "https://www.thechunkychef.com/wp-content/uploads/2020/04/Classic-Banana-Bread-cut.jpg"
-    },
-    {
-      "id": 2,
-      "typeName": "cookie",
-      "imageUrl": "https://www.foodandwine.com/thmb/4_UScMzHQCxZzACBITHHmT_EM3U=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Chocolate-Chunk-Halwah-Cookies-FT-RECIPE0923-1f8df755df6d468da98887aa846a2fe3.jpg"
-    },
-    {
-      "id": 3,
-      "typeName": "cake/cupcake",
-      "imageUrl": "https://www.kingarthurbaking.com/sites/default/files/styles/featured_image/public/blog-featured/Cake-to-cupcakes-5.jpg?itok=kYDd3B4U"
-    },
-    {
-      "id": 4,
-      "typeName": "pastry",
-      "imageUrl": "https://truefoodfact.com/wp-content/uploads/2020/11/Pastry-e1605079790199.jpg"
-    },
-    {
-      "id": 5,
-      "typeName": "pie",
-      "imageUrl": "https://batchbakehouse.com/wp-content/uploads/2019/08/pies_Mini-Pies-Assorted-FruitKeyLime.jpg"
-    }
-  ]
-}
-]
-=======
   {
     "id": 1,
     "typeName": "Bread",
@@ -57,4 +25,3 @@
     "imageUrl": "https://batchbakehouse.com/wp-content/uploads/2019/08/pies_Mini-Pies-Assorted-FruitKeyLime.jpg"
   }
 ]
->>>>>>> a05c306055388bd60cacfd689d19ea30effe66eb

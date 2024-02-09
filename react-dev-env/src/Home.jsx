@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-import { Link } from "react-router-dom";
-
-const Home = () => {
-  return (
-    <h1>Byte Categories</h1>
-=======
 import "./App.css";
 import { useState, useEffect } from "react";
 import ImageCard from "./ImageCard";
@@ -34,7 +27,6 @@ const Home = () => {
         ))}
       </section>
     </div>
->>>>>>> a05c306055388bd60cacfd689d19ea30effe66eb
   );
 };
 
