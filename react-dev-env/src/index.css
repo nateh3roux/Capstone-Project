@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 :root {
+=======
+/* :root {
+>>>>>>> a05c306055388bd60cacfd689d19ea30effe66eb
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -65,4 +69,28 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+<<<<<<< HEAD
+=======
+} */
+* { 
+ margin: 0; 
+ padding: 0; 
+ box-sizing: border-box; 
+} 
+/* 
+#background-img-div {
+  background-image: url("images/background.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: rgba(255,255,255,0.6);
+  background-blend-mode: lighten;
+  margin: 0;
+} */
+
+body{
+  margin: 0;
+  background-color: #eee2dc;
+  height: 700px;
+>>>>>>> a05c306055388bd60cacfd689d19ea30effe66eb
 }

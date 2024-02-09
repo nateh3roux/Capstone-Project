@@ -1,4 +1,5 @@
 [
+<<<<<<< HEAD
 
    
     {
@@ -182,3 +183,224 @@
       "imageUrl": "https://thekitchengirl.com/wp-content/uploads/Cranberry-Walnut-Bread-B_242-2.jpg"
     }
   ]
+=======
+  {
+    "id": 1,
+    "name": "Chocolate Chip Cookies",
+    "price": 2.99,
+    "description": "Classic homemade cookies loaded with chocolate chips.",
+    "inStock": true,
+    "typeId": 2,
+    "popularity": 9,
+    "visual_appeal": 5,
+    "imageUrl": "https://www.twopeasandtheirpod.com/wp-content/uploads/2022/11/Brown-Butter-Chocolate-Chip-Cookies-28.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Blueberry Muffins",
+    "price": 3.49,
+    "description": "Moist and fluffy muffins bursting with fresh blueberries.",
+    "inStock": true,
+    "typeId": 4,
+    "popularity": 4,
+    "visual_appeal": 4,
+    "imageUrl": "https://bakerbynature.com/wp-content/uploads/2011/05/Blueberry-Muffins-1-of-1.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Cinnamon Rolls",
+    "price": 4.99,
+    "description": "Warm and gooey rolls filled with cinnamon and topped with cream cheese frosting.",
+    "inStock": true,
+    "typeId": 4,
+    "popularity": 8,
+    "visual_appeal": 8,
+    "imageUrl": "https://www.inspiredtaste.net/wp-content/uploads/2023/09/Best-Cinnamon-Rolls-Recipe-Video.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Red Velvet Cupcakes",
+    "price": 3.99,
+    "description": "Decadent cupcakes with a rich red velvet flavor and creamy frosting.",
+    "inStock": true,
+    "typeId": 3,
+    "popularity": 6,
+    "visual_appeal": 7,
+    "imageUrl": "https://beginwithbutter.com/wp-content/uploads/2023/06/Red-Velvet-Cupcakes-21.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Lemon Bars",
+    "price": 2.79,
+    "description": "Tangy lemon filling on a buttery shortbread crust, topped with powdered sugar.",
+    "inStock": true,
+    "typeId": 4,
+    "popularity": 3,
+    "visual_appeal": 2,
+    "imageUrl": "https://mindovermunch.com/wp-content/uploads/2015/06/Healthy-Lemon-Bars-4-wptasty.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Banana Bread",
+    "price": 5.49,
+    "description": "Moist and flavorful banana bread made with ripe bananas and a hint of cinnamon.",
+    "inStock": true,
+    "typeId": 1,
+    "popularity": 5,
+    "visual_appeal": 4,
+    "imageUrl": "https://allthehealthythings.com/wp-content/uploads/2023/12/Gluten-Free-Brown-Butter-Banana-Bread-5-scaled.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Carrot Cake",
+    "price": 6.99,
+    "description": "Deliciously moist carrot cake layered with cream cheese frosting and topped with walnuts.",
+    "inStock": true,
+    "typeId": 3,
+    "popularity": 4,
+    "visual_appeal": 6,
+    "imageUrl": "https://chelsweets.com/wp-content/uploads/2023/03/cut-into-slice-of-finished-6-inch-carrot-cake-735x980.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Pumpkin Pie",
+    "price": 7.49,
+    "description": "Classic pumpkin pie with a flaky crust and aromatic spices.",
+    "inStock": false,
+    "typeId": 5,
+    "popularity": 4,
+    "visual_appeal": 8,
+    "imageUrl": "https://tastesbetterfromscratch.com/wp-content/uploads/2022/10/PumpkinPie2-2.jpg"
+  },
+  {
+    "id": 9,
+    "name": "Strawberry Shortcake",
+    "price": 4.99,
+    "description": "Layers of moist sponge cake, fresh strawberries, and whipped cream.",
+    "inStock": true,
+    "typeId": 3,
+    "popularity": 3,
+    "visual_appeal": 9,
+    "imageUrl": "https://www.dessertfortwo.com/wp-content/uploads/2010/05/Strawberry-Shortcake-17-735x1103.jpg"
+  },
+  {
+    "id": 10,
+    "name": "Chocolate Fudge Brownies",
+    "price": 3.79,
+    "description": "Rich and indulgent brownies loaded with chocolate chunks and nuts.",
+    "inStock": true,
+    "typeId": 4,
+    "imageUrl": "https://sallysbakingaddiction.com/wp-content/uploads/2016/12/homemade-fudge-brownies-3.jpg"
+  },
+  {
+    "id": 11,
+    "name": "Almond Croissants",
+    "price": 2.99,
+    "description": "Buttery croissants filled with almond paste and topped with sliced almonds.",
+    "inStock": true,
+    "typeId": 4,
+    "popularity": 9,
+    "visual_appeal": 3,
+    "imageUrl": "https://i0.wp.com/www.aceofspoons.com/wp-content/uploads/2022/09/almond-croissants-15-of-19-scaled.jpg?fit=1707%2C2560"
+  },
+  {
+    "id": 12,
+    "name": "Raspberry Danish",
+    "price": 3.49,
+    "description": "Flaky pastry filled with sweet raspberry jam and drizzled with icing.",
+    "inStock": true,
+    "typeId": 4,
+    "popularity": 4,
+    "visual_appeal": 4,
+    "imageUrl": "https://brokenovenbaking.com/wp-content/uploads/2022/08/raspberry-danish-8-1.jpg"
+  },
+  {
+    "id": 13,
+    "name": "Pecan Pie",
+    "price": 4.99,
+    "description": "Traditional southern pecan pie with a caramelized pecan filling in a flaky crust.",
+    "inStock": true,
+    "typeId": 5,
+    "popularity": 3,
+    "visual_appeal": 8,
+    "imageUrl": "https://www.allrecipes.com/thmb/DNx1CvM58s_LeMW_xPIF31Smeb0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/9487-pecan-pie-DDMFS-4x3-41008a350a8543c78a08d400d2fb8a5a.jpg"
+  },
+  {
+    "id": 14,
+    "name": "Apple Turnovers",
+    "price": 3.99,
+    "description": "Golden puff pastry filled with cinnamon-spiced apples and glazed with sugar.",
+    "inStock": false,
+    "typeId": 4,
+    "popularity": 5,
+    "visual_appeal": 2,
+    "imageUrl": "https://iambaker.net/wp-content/uploads/2022/11/apple-turnovers-6.jpg"
+  },
+  {
+    "id": 15,
+    "name": "Sourdough Bread",
+    "price": 5.49,
+    "description": "Artisanal sourdough bread with a crispy crust and tangy flavor.",
+    "inStock": true,
+    "typeId": 1,
+    "popularity": 9,
+    "visual_appeal": 2,
+    "imageUrl": "https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_1:1/k%2FPhoto%2FRecipes%2F2020-01-How-to-Sourdough-Bread%2F98877-sliced-lead_How-to-make-sourdough-bread"
+  },
+  {
+    "id": 16,
+    "name": "Chocolate Hazelnut Tart",
+    "price": 6.99,
+    "description": "Decadent tart filled with creamy chocolate hazelnut ganache and topped with toasted hazelnuts.",
+    "inStock": true,
+    "typeId": 4,
+    "popularity": 5,
+    "visual_appeal": 4,
+    "imageUrl": "https://crumbsandcaramel.com/wp-content/uploads/2018/06/Flatlay-whole-tart-no-crop.jpg"
+  },
+  {
+    "id": 17,
+    "name": "Lemon Poppy Seed Cake",
+    "price": 4.79,
+    "description": "Light and moist cake infused with fresh lemon zest and poppy seeds, topped with lemon glaze.",
+    "inStock": true,
+    "typeId": 3,
+    "popularity": 2,
+    "visual_appeal": 4,
+    "imageUrl": "https://thecakeblog.com/wp-content/uploads/2018/02/lemon-poppy-seed-cake-thumb-sm.jpg"
+  },
+  {
+    "id": 18,
+    "name": "Vanilla Bean Scones",
+    "price": 3.99,
+    "description": "Tender scones made with real vanilla beans and topped with a sweet vanilla glaze.",
+    "inStock": true,
+    "typeId": 4,
+    "popularity": 1,
+    "visual_appeal": 3,
+    "imageUrl": "https://www.mybakingaddiction.com/wp-content/uploads/2015/01/plated-vanilla-bean-scone-hero-540x720.jpg"
+  },
+  {
+    "id": 19,
+    "name": "Chocolate Babka",
+    "price": 7.49,
+    "description": "Sweet bread swirled with layers of rich chocolate and topped with a streusel topping.",
+    "inStock": true,
+    "typeId": 1,
+    "popularity": 9,
+    "visual_appeal": 10,
+    "imageUrl": "https://www.onceuponachef.com/images/2022/02/babka.jpg"
+  },
+  {
+    "id": 20,
+    "name": "Cranberry Walnut Bread",
+    "price": 4.99,
+    "description": "Homemade bread packed with tart cranberries and crunchy walnuts, perfect for toasting.",
+    "inStock": false,
+    "typeId": 1,
+    "popularity": 2,
+    "visual_appeal": 3,
+    "imageUrl": "https://thekitchengirl.com/wp-content/uploads/Cranberry-Walnut-Bread-B_242-2.jpg"
+  }
+]
+>>>>>>> a05c306055388bd60cacfd689d19ea30effe66eb
