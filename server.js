@@ -74,7 +74,7 @@ app.post("/checkout", async (req, res) => {
       cardNumber,
       expirationMonth,
       expirationYear,
-      securityCode,
+      CVC,
     } = req.body;
     const result = await collection.insertOne(req.body);
 

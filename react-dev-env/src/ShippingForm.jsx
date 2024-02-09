@@ -2,20 +2,22 @@ import { useState, useEffect } from "react";
 import Axios from 'axios';
 
 const ShippingForm = () => {
-    // shipping state
+  // shipping state
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [address, setAddress] = useState("");
   const [state, setState] = useState("");
   const [city, setCity] = useState("");
   const [zipCode, setZipCode] = useState("");
-// credit card state
-    const [cardNumber, setCardNumber] = useState("");
-    const [expirationMonth, setExpirationMonth] = useState("");
-    const [expirationYear, setExpirationYear] = useState("");
-    const [securityCode, setSecurityCode] = useState("");
+  // credit card state
+  const [cardNumber, setCardNumber] = useState("");
+  const [expirationMonth, setExpirationMonth] = useState("");
+  const [expirationYear, setExpirationYear] = useState("");
+  const [securityCode, setSecurityCode] = useState("");
 
-    //SHIPPING INFO
+    const [message, setMessage] = useState("");
+
+  //SHIPPING INFO
   useEffect(() => {
     const autocomplete = new window.google.maps.places.Autocomplete(
       document.getElementById("address"),
@@ -92,22 +94,28 @@ const ShippingForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-     await Axios.post("http://localhost:3000/checkout", {
-       firstName: firstName,
-       lastName: lastName,
-       address: address,
-       state: state,
-       city: city,
-       zipCode: zipCode,
-        cardNumber: cardNumber,
-        expirationMonth: expirationMonth,
-        expirationYear: expirationYear,
-        securityCode: securityCode
-     }).then((response) => {
-        console.log(response.data)
-     });
+    setMessage("Your order has been submitted!");
+    setTimeout(() => {
+      setMessage("");
+    }, 5000); // 5000 milliseconds = 5 seconds
+
+    await Axios.post("http://localhost:3000/checkout", {
+      firstName: firstName,
+      lastName: lastName,
+      address: address,
+      state: state,
+      city: city,
+      zipCode: zipCode,
+      cardNumber: cardNumber,
+      expirationMonth: expirationMonth,
+      expirationYear: expirationYear,
+      securityCode: securityCode,
+    }).then((response) => {
+      console.log(response.data);
+    });
     //  console.log(response.data)
   };
+
 
   return (
     <form onSubmit={handleSubmit}>
@@ -224,6 +232,7 @@ const ShippingForm = () => {
       />
       {/* Other form fields */}
       <button type="submit">Submit</button>
+      <h3>{message}</h3>
     </form>
   );
 };
