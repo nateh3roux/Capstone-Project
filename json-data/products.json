@@ -1,5 +1,6 @@
-{
-  "products": [
+[
+
+   
     {
       "id": 1,
       "name": "Chocolate Chip Cookies",
@@ -181,4 +182,3 @@
       "imageUrl": "https://thekitchengirl.com/wp-content/uploads/Cranberry-Walnut-Bread-B_242-2.jpg"
     }
   ]
-}
