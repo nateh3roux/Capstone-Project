@@ -1,31 +1,158 @@
-#site-title {
-  color: darkblue;
-  text-align: center;
-  font-family: "Satisfy", cursive;
-  font-size: 3em;
+/* App styles */
+.App {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
+/* Website Title */
+#site-title {
+  color: #ac3b61;
+  text-align: center;
+  font-family: "Satisfy", cursive;
+  font-size: 4em;
+}
+
+/* Nav Bar Styles */
 .nav-bar-ul {
   list-style-type: none;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   font-family: "Work Sans", sans-serif;
+  font-size: 1.5em;
 }
 
+/* Nav Item Styles */
+.link-styles {
+  text-decoration: none;
+  color: #123c69;
+  padding: 5px;
+}
+
+.link-styles:hover {
+  color: #ac3b61;
+  background-color: #edc7b7;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+/* Image Card Styles */
 #image-card-div {
   display: flex;
   flex-direction: column;
   margin: 20px;
+  position: relative;
+  width: 150px;
+}
+
+#image-card-div:hover .overlay {
+  opacity: 0.8;
 }
 
 #image-card-img {
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
+  display: block;
+  border-radius: 5px;
+  object-fit: cover;
 }
 
-#categories-list{
+#image-card-text {
+  color: #123c69;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  font-family: "Patua One", serif;
+  font-size: 2em;
+}
+
+#categories-list {
   display: flex;
   justify-content: space-around;
   flex-flow: wrap;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.3s ease;
+  background-color: #bab2b5;
+  border-radius: 5px;
+}
+
+/* Product Card Styles */
+#product-card-div {
+  width: 200px;
+  height: auto;
+  margin: 10px;
+}
+
+#image-overlay-div {
+  position: relative;
+  width: 150px;
+}
+
+#product-card-img {
+  width: 200px;
+  height: 200px;
+  display: block;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.img-in-stock {
+  display: none;
+}
+
+.img-out-stock {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  width: 200px;
+  background-color: #bab2b5;
+  opacity: 0.8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  font-family: "Work Sans", sans-serif;
+}
+
+#product-card-name {
+  color: #123c69;
+  font-family: "Patua One", serif;
+  font-size: 1em;
+}
+
+#product-card-price {
+  color: #ac3b61;
+  font-family: "Satisfy", cursive;
+}
+
+/* Product Page Styles */
+#products-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-flow: wrap;
+}
+
+/* Footer Styles */
+#footer-div {
+  font-family: "Source Code Pro", monospace;
+  color: #ac3b61;
+  text-align: center;
 }

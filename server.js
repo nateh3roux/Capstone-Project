@@ -34,6 +34,21 @@ app.get("/products", async (req, res) => {
   res.json(results);
 });
 
+//get product by id
+app.get("/products/:id", async (req, res) => {
+  const prodId = parseInt(req.params.id);
+  try {
+    const results = await products.findOne({ id: prodId });
+    if (results) {
+      res.json(results);
+    } else {
+      res.status(404).json({ message: "Product not found" });
+    }
+  } catch (error) {
+    res.status(500).json({ message: "Internal server error" });
+  }
+});
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });

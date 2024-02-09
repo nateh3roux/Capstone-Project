@@ -16,7 +16,7 @@ const Home = () => {
   console.log(type);
   return (
     <div>
-      <h1>Byte Categories</h1>;
+      {/* <h1>Byte Categories</h1>; */}
       <section id="categories-list">
         {type.map((product, index) => (
           <ImageCard key={index} imageUrl={product.imageUrl} name={product.typeName}></ImageCard>
