@@ -19,7 +19,11 @@ const Home = () => {
       {/* <h1>Byte Categories</h1>; */}
       <section id="categories-list">
         {type.map((product, index) => (
-          <ImageCard key={index} imageUrl={product.imageUrl} name={product.typeName}></ImageCard>
+          <ImageCard
+            key={index}
+            imageUrl={product.imageUrl}
+            name={product.typeName}
+          ></ImageCard>
         ))}
       </section>
     </div>

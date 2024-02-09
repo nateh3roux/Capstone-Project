@@ -85,4 +85,5 @@ button:focus-visible {
 body{
   margin: 0;
   background-color: #eee2dc;
+  height: 700px;
 }

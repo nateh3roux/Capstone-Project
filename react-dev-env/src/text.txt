@@ -1,0 +1,22 @@
+const express = require('express');
+const router = express.Router();
+const { PythonShell } = require('python-shell');
+
+// Define a route to handle requests for product recommendations
+router.post('/recommendations', (req, res) => {
+    // Extract relevant details of the product from the request
+    const { price, visual_appeal, popularity } = req.body;
+
+    // Call the Python script to get recommendations
+    PythonShell.run('path_to_your_python_script.py', { args: [price, visual_appeal, popularity] }, (err, results) => {
+        if (err) {
+            console.error(err);
+            res.status(500).json({ error: 'Internal server error' });
+        } else {
+            const recommendations = JSON.parse(results[0]);
+            res.json(recommendations);
+        }
+    });
+});
+
+module.exports = router;

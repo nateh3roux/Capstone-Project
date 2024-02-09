@@ -2,15 +2,18 @@
 .App {
   display: flex;
   flex-direction: column;
+  /* justify-content: space-between; */
   gap: 10px;
 }
 
 /* Website Title */
 #site-title {
-  color: #ac3b61;
+  color: #123c69;
   text-align: center;
-  font-family: "Satisfy", cursive;
-  font-size: 4em;
+  font-family: "Cute Font", sans-serif;
+  font-weight: bolder;
+  font-size: 5em;
+  background-image: url("https://www.shutterstock.com/image-vector/pastry-sweet-bakery-seamless-pattern-600nw-1709972164.jpg");
 }
 
 /* Nav Bar Styles */
@@ -43,7 +46,7 @@
   flex-direction: column;
   margin: 20px;
   position: relative;
-  width: 150px;
+  width: 200px;
 }
 
 #image-card-div:hover .overlay {
@@ -51,8 +54,8 @@
 }
 
 #image-card-img {
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
   display: block;
   border-radius: 5px;
   object-fit: cover;
@@ -139,7 +142,7 @@
 
 #product-card-price {
   color: #ac3b61;
-  font-family: "Satisfy", cursive;
+  font-family: "Lato", sans-serif;
 }
 
 /* Product Page Styles */
@@ -155,4 +158,9 @@
   font-family: "Source Code Pro", monospace;
   color: #ac3b61;
   text-align: center;
+}
+
+
+#address{
+  width: 300px;
 }

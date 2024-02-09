@@ -1,14 +1,20 @@
 // express
 const express = require("express");
 const cors = require("cors");
+// const { PythonShell } = require("python-shell");
 const app = express();
 app.use(cors());
+const router = express.Router();
 const port = 3000;
+const bodyParser = require("body-parser");
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 // Connecting to mongodb
 const { MongoClient } = require("mongodb");
 let url = "mongodb://127.0.0.1:27017";
 const client = new MongoClient(url);
+client.connect();
 
 // database
 const dbName = "bakeryapi";
@@ -48,6 +54,59 @@ app.get("/products/:id", async (req, res) => {
     res.status(500).json({ message: "Internal server error" });
   }
 });
+
+
+
+
+app.post("/checkout", async (req, res) => {
+  try {
+    const db = client.db(dbName);
+    const collection = db.collection("SalesData");
+
+    // Insert the form data into the database
+    const {
+      firstName,
+      lastName,
+      address,
+      state,
+      city,
+      zipCode,
+      cardNumber,
+      expirationMonth,
+      expirationYear,
+      securityCode,
+    } = req.body;
+    const result = await collection.insertOne(req.body);
+
+    res.status(201).json({ message: "Form data saved successfully" });
+    res.end();
+  } catch (error) {
+    console.error("Error:", error);
+    res.status(500).json({ error: "Internal server error" });
+    res.end();
+  }
+});
+
+// app.post('/cart', (req,res))
+
+
+// // Define the route to handle requests for product recommendations
+// app.post("/recommendations", (req, res) => {
+//     // Extract relevant details of the product from the request
+//     const { price, visual_appeal, popularity } = req.body;
+
+//     // Call the Python script to get recommendations
+//     PythonShell.run("path_to_your_python_script.py", { args: [price, visual_appeal, popularity] }, (err, results) => {
+//         if (err) {
+//             console.error(err);
+//             res.status(500).json({ error: "Internal server error" });
+//         } else {
+//             const recommendations = JSON.parse(results[0]);
+//             res.json(recommendations);
+//         }
+//     });
+// });
+
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
