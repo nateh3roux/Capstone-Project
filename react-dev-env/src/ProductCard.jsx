@@ -5,7 +5,13 @@ const ProductCard = ({ id, name, price, inStock, imageUrl }) => {
   return (
     <div id="product-card-div">
       <div id="image-overlay-div">
-        <img id="product-card-img" src={imageUrl}></img>
+        <img
+          id="product-card-img"
+          src={imageUrl}
+          onClick={() => {
+            navigate(`/products/${id}`);
+          }}
+        ></img>
         <div className={inStock ? "img-in-stock" : "img-out-stock"}>
           Out of Stock
         </div>
@@ -18,7 +24,7 @@ const ProductCard = ({ id, name, price, inStock, imageUrl }) => {
       >
         {name}
       </h3>
-      <p id="product-card-price">{price}</p>
+      <p id="product-card-price">${price}</p>
     </div>
   );
 };

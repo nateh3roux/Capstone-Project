@@ -55,9 +55,6 @@ app.get("/products/:id", async (req, res) => {
   }
 });
 
-
-
-
 app.post("/checkout", async (req, res) => {
   try {
     const db = client.db(dbName);
@@ -87,26 +84,31 @@ app.post("/checkout", async (req, res) => {
   }
 });
 
-// app.post('/cart', (req,res))
+// Define the route to handle requests for product recommendations
+app.post("/recommendations", (req, res) => {
+  console.log("Request Body:", req.body);
+  console.log("Route /recommendations accessed");
+  // Extract relevant details of the product from the request
+  const { price, visual_appeal, popularity } = req.body;
+  console.log("Price:", price);
+  console.log("Visual Appeal:", visual_appeal);
+  console.log("Popularity:", popularity);
 
-
-// // Define the route to handle requests for product recommendations
-// app.post("/recommendations", (req, res) => {
-//     // Extract relevant details of the product from the request
-//     const { price, visual_appeal, popularity } = req.body;
-
-//     // Call the Python script to get recommendations
-//     PythonShell.run("path_to_your_python_script.py", { args: [price, visual_appeal, popularity] }, (err, results) => {
-//         if (err) {
-//             console.error(err);
-//             res.status(500).json({ error: "Internal server error" });
-//         } else {
-//             const recommendations = JSON.parse(results[0]);
-//             res.json(recommendations);
-//         }
-//     });
-// });
-
+  // Call the Python script to get recommendations
+  PythonShell.run(
+    "react-dev-env/src/python_scripts/KnnScript.py",
+    { args: [price, visual_appeal, popularity] },
+    (err, results) => {
+      if (err) {
+        console.error(err);
+        res.status(500).json({ error: "Internal server error" });
+      } else {
+        const recommendations = JSON.parse(results[0]);
+        res.json(recommendations);
+      }
+    }
+  );
+});
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
