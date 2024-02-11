@@ -1,7 +1,7 @@
 // express
 const express = require("express");
 const cors = require("cors");
-// const { PythonShell } = require("python-shell");
+const { PythonShell } = require("python-shell");
 const app = express();
 app.use(cors());
 const router = express.Router();

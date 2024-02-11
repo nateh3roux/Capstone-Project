@@ -10,12 +10,12 @@ const CartPage = () => {
   console.log("Cart:", cartItems); // Add this line to check the value of cart
   console.log("Cart total:", getCartTotal); // Add this line to check the value of cart
   const cartTotal = getCartTotal();
-  console.log({
-    id: cartItems[0].id,
-    price: cartItems[0].price,
-    popularity: cartItems[0].popularity,
-    visual_appeal: cartItems[0].visual_appeal,
-  });
+  // console.log({
+  //   id: cartItems[0].id,
+  //   price: cartItems[0].price,
+  //   popularity: cartItems[0].popularity,
+  //   visual_appeal: cartItems[0].visual_appeal,
+  // });
   useEffect(() => {
     // Make a POST request to fetch the recommended item
     const fetchRecommendation = async () => {
@@ -29,14 +29,15 @@ const CartPage = () => {
             visual_appeal: cartItems[0].visual_appeal,
           }
         );
-        console.log(response)
+        console.log(response);
         setRecommendedItem(response.data);
       } catch (error) {
         console.error("Error fetching recommendation:", error);
       }
     };
-
-    fetchRecommendation();
+    if (cartItems) {
+      fetchRecommendation();
+    }
   }, [cartItems]);
   return (
     <div id="cart-page-div">
