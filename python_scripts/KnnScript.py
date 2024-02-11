@@ -5,10 +5,10 @@ from sklearn.neighbors import NearestNeighbors
 df = pd.read_csv('bakery_items.csv')
 
 # Function to get recommendations based on cart items
-def get_recommendations(cart_items):
+def get_recommendations(cartItems):
     # Extract features from cart items
-    cart_data = df[df['name'].isin(cart_items)][['price', 'visual_appeal', 'popularity']]
-
+    cart_data = df[df['name'].isin(cartItems)][['price', 'visual_appeal', 'popularity']]
+    cart_data.head()
     # Train the nearest neighbors model
     neighbor = NearestNeighbors(n_neighbors=2, algorithm='brute')
     neighbor.fit(df[['price', 'visual_appeal', 'popularity']])

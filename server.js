@@ -1,7 +1,7 @@
 // express
 const express = require("express");
 const cors = require("cors");
-// const { PythonShell } = require("python-shell");
+const { PythonShell } = require("python-shell");
 const app = express();
 app.use(cors());
 const router = express.Router();
@@ -9,7 +9,7 @@ const port = 3000;
 const bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-const { get_recommendations } = require("/react-dev-env\src\python_scripts\KnnScript.py");
+// const { get_recommendations } = require("/python_scripts/KnnScript.py");
 
 // Connecting to mongodb
 const { MongoClient } = require("mongodb");
@@ -85,47 +85,46 @@ app.post("/checkout", async (req, res) => {
   }
 });
 
-// Define the route to handle requests for product recommendations
-app.post('/recommendations', async (req, res) => {
-  // Extract cart items from the request body
-  const { cartItems } = req.body;
+// // Define the route to handle requests for product recommendations
+// app.post('/recommendations', async (req, res) => {
+//   // Extract cart items from the request body
+//   const { cartItems } = req.body;
 
-  try {
-    // Get recommendations based on cart items
-    const recommendations = await get_recommendations(cartItems);
-    res.json({ recommendations });
-  } catch (error) {
-    console.error('Error fetching recommendations:', error);
-    res.status(500).json({ error: 'Internal server error' });
-  }
-});
-
-
-// Define the route to handle requests for product recommendations
-// app.post("/recommendations", (req, res) => {
-//   console.log("Request Body:", req.body);
-//   console.log("Route /recommendations accessed");
-//   // Extract relevant details of the product from the request
-//   const { price, visual_appeal, popularity } = req.body;
-//   console.log("Price:", price);
-//   console.log("Visual Appeal:", visual_appeal);
-//   console.log("Popularity:", popularity);
-
-//   // Call the Python script to get recommendations
-//   PythonShell.run(
-//     "react-dev-env/src/python_scripts/KnnScript.py",
-//     { args: [price, visual_appeal, popularity] },
-//     (err, results) => {
-//       if (err) {
-//         console.error(err);
-//         res.status(500).json({ error: "Internal server error" });
-//       } else {
-//         const recommendations = JSON.parse(results[0]);
-//         res.json(recommendations);
-//       }
-//     }
-//   );
+//   try {
+//     // Get recommendations based on cart items
+//     const recommendations = await get_recommendations(cartItems);
+//     res.json({ recommendations });
+//   } catch (error) {
+//     console.error('Error fetching recommendations:', error);
+//     res.status(500).json({ error: 'Internal server error' });
+//   }
 // });
+
+//Define the route to handle requests for product recommendations
+app.post("/recommendations", (req, res) => {
+  console.log("Request Body:", req.body);
+  console.log("Route /recommendations accessed");
+  // Extract relevant details of the product from the request
+  const { price, visual_appeal, popularity } = req.body;
+  console.log("Price:", price);
+  console.log("Visual Appeal:", visual_appeal);
+  console.log("Popularity:", popularity);
+
+  // Call the Python script to get recommendations
+  PythonShell.run(
+    "python_scripts/Jup.ipynb",
+    { args: [price, visual_appeal, popularity] },
+    (err, results) => {
+      if (err) {
+        console.error(err);
+        res.status(500).json({ error: "Internal server error" });
+      } else {
+        const recommendations = JSON.parse(results[0]);
+        res.json(recommendations);
+      }
+    }
+  );
+});
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
