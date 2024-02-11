@@ -23,6 +23,8 @@ const CartPage = () => {
         const response = await Axios.post(
           "http://localhost:3000/recommendations",
           {
+
+           
             id: cartItems[0].id,
             price: cartItems[0].price,
             popularity: cartItems[0].popularity,
@@ -35,10 +37,16 @@ const CartPage = () => {
         console.error("Error fetching recommendation:", error);
       }
     };
+<<<<<<< HEAD
     if (cartItems) {
       fetchRecommendation();
     }
+=======
+
+    if (cartItems){ fetchRecommendation();}
+>>>>>>> 65383e0503562847513e8b32d8bfea71ae831a98
   }, [cartItems]);
+  console.log(recommendedItem)
   return (
     <div id="cart-page-div">
       <div id="items-in-cart-div">
