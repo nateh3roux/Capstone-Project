@@ -82,7 +82,8 @@
   object-fit: cover;
 }
 
-img:hover,#image-card-div:hover{
+img:hover,
+#image-card-div:hover {
   cursor: pointer;
 }
 
@@ -165,7 +166,7 @@ img:hover,#image-card-div:hover{
   font-size: 1.1em;
 }
 
-#product-card-name:hover{
+#product-card-name:hover {
   cursor: pointer;
 }
 
@@ -175,6 +176,17 @@ img:hover,#image-card-div:hover{
 }
 
 /* Product Page Styles */
+#all-products-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#search-bar {
+  width: 300px;
+  margin: 20px;
+}
+
 #products-list {
   display: flex;
   flex-direction: row;
@@ -182,36 +194,68 @@ img:hover,#image-card-div:hover{
   flex-flow: wrap;
 }
 
-#product-page-div{
+#product-page-div {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  margin: 30px;
+  gap: 40px;
+  justify-content: center;
 }
 
 /* Product Details Page Styles */
-#product-details-div{
-  display: flex;
-  flex-direction: row;
-  margin: 30px;
-  gap: 40px;
-}
-
-#product-details-img{
+#product-details-img {
   width: 350px;
   height: 350px;
   object-fit: cover;
   border-radius: 5px;
 }
 
-#product-details-name-price{
+#product-details {
   display: flex;
   flex-direction: column;
   gap: 10px;
   justify-content: center;
 }
 
-#add-to-cart-btn{
+#product-details-name {
+  color: #123c69;
+  font-size: 2em;
+  font-family: "Patua One", serif;
+}
+
+#product-details-price {
+  color: #356eaa;
+  font-size: 1.5em;
+  font-family: "Lato", sans-serif;
+}
+
+#item-out-of-stock {
+  color: #717579;
+  font-size: 1em;
+  font-family: "Lato", sans-serif;
+}
+
+#product-details-description {
+  color: #39424b;
+  font-size: 1.2em;
+  font-family: "Lato", sans-serif;
+}
+
+#add-to-cart-btn {
   align-self: center;
+}
+
+#button-msg-div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+
+#added-to-cart-msg {
+  color: rgb(3, 99, 3);
+  font-size: 0.9em;
 }
 
 /* Cart Page Styles */
@@ -224,7 +268,7 @@ img:hover,#image-card-div:hover{
   display: flex;
   flex-direction: column;
   width: 50%;
-  gap: 10px;
+  gap: 20px;
   padding: 10px 25px;
 }
 
@@ -240,14 +284,25 @@ img:hover,#image-card-div:hover{
   gap: 10px;
 }
 
-#cart-item-div {
+.cart-item-div {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
 }
 
-#cart-img {
+.header {
+  font-weight: lighter;
+  text-decoration: underline;
+}
+
+.header.cart-img {
+  height: 0px;
+}
+
+.cart-img {
   width: 50px;
   height: 50px;
   object-fit: cover;
@@ -257,21 +312,28 @@ img:hover,#image-card-div:hover{
   color: #123c69;
 }
 
-#cart-info-name {
+.cart-info-name {
   width: 55%;
 }
 
-#cart-info-price {
+.cart-info-price {
   width: 15%;
 }
 
-#cart-info-quantity {
+.cart-info-quantity {
   width: 5%;
+}
+
+#clear-cart-total-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 #cart-total {
   color: #123c69;
-  font-size: 1.5em;
+  font-size: 1.3em;
+  font-family: "Patua One", serif;
 }
 
 .cart-button {
@@ -303,7 +365,7 @@ img:hover,#image-card-div:hover{
   transform: translate(2px, 2px);
 }
 
-form{
+form {
   width: 60%;
   border: 1px solid gray;
   padding: 20px;
@@ -318,15 +380,18 @@ form{
   flex-direction: column;
   width: 50%;
   padding: 10px 25px;
+  align-items: center;
 }
 
-#name-input-div {
+#name-input-div,
+#expiration-date-div {
   display: flex;
   flex-direction: row;
   gap: 2%;
 }
 
-.name-div{
+.name-div,
+.exp-div {
   width: 49%;
 }
 
@@ -335,12 +400,8 @@ form{
   flex-direction: column;
 }
 
-#expiration-date-div {
-  display: flex;
-  flex-direction: row;
-}
-
-input {
+input,
+select {
   padding: 5px;
   font-size: 1em;
   border-radius: 7px;
@@ -348,7 +409,8 @@ input {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-input:focus {
+input:focus,
+select:focus {
   outline: 2px solid #ac3b61;
 }
 
@@ -359,12 +421,18 @@ label {
   font-size: 0.9em;
 }
 
-#payment-btn{
+#payment-btn {
   align-self: center;
 }
 
-.pop-up-msg{
-  color: white;
+#msg-div {
+  display: flex;
+  color: rgb(3, 99, 3);
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 20px;
+  font-size: 1em;
 }
 
 /* Footer Styles */

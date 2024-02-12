@@ -56,6 +56,25 @@ app.get("/products/:id", async (req, res) => {
   }
 });
 
+// get products by type, planet=type, prod=film
+app.get('/type/:id/products', async (req, res) => {
+    const typeId = parseInt(req.params.id);
+    try{
+        const results = await products
+          .find({ typeId: typeId })
+          .toArray();
+        // const productIds = results.map(result => result.typeId)
+        // const filmNames = await films.find({id: {$in: filmIds}}).toArray();
+        if(results){
+            res.json(results);
+        }else{
+            res.status(404).json({message: 'film not found'})
+        }
+    }catch(error){
+        res.status(500).json({message:'internal server error'})
+    }
+});
+
 app.post("/checkout", async (req, res) => {
   try {
     const db = client.db(dbName);
@@ -85,46 +104,32 @@ app.post("/checkout", async (req, res) => {
   }
 });
 
-// // Define the route to handle requests for product recommendations
-// app.post('/recommendations', async (req, res) => {
-//   // Extract cart items from the request body
-//   const { cartItems } = req.body;
 
-//   try {
-//     // Get recommendations based on cart items
-//     const recommendations = await get_recommendations(cartItems);
-//     res.json({ recommendations });
-//   } catch (error) {
-//     console.error('Error fetching recommendations:', error);
-//     res.status(500).json({ error: 'Internal server error' });
-//   }
+// //Define the route to handle requests for product recommendations
+// app.post("/recommendations", (req, res) => {
+//   console.log("Request Body:", req.body);
+//   console.log("Route /recommendations accessed");
+//   // Extract relevant details of the product from the request
+//   const { price, visual_appeal, popularity } = req.body;
+//   console.log("Price:", price);
+//   console.log("Visual Appeal:", visual_appeal);
+//   console.log("Popularity:", popularity);
+
+//   // Call the Python script to get recommendations
+//   PythonShell.run(
+//     "python_scripts/Jup.ipynb",
+//     { args: [price, visual_appeal, popularity] },
+//     (err, results) => {
+//       if (err) {
+//         console.error(err);
+//         res.status(500).json({ error: "Internal server error" });
+//       } else {
+//         const recommendations = JSON.parse(results[0]);
+//         res.json(recommendations);
+//       }
+//     }
+//   );
 // });
-
-//Define the route to handle requests for product recommendations
-app.post("/recommendations", (req, res) => {
-  console.log("Request Body:", req.body);
-  console.log("Route /recommendations accessed");
-  // Extract relevant details of the product from the request
-  const { price, visual_appeal, popularity } = req.body;
-  console.log("Price:", price);
-  console.log("Visual Appeal:", visual_appeal);
-  console.log("Popularity:", popularity);
-
-  // Call the Python script to get recommendations
-  PythonShell.run(
-    "python_scripts/Jup.ipynb",
-    { args: [price, visual_appeal, popularity] },
-    (err, results) => {
-      if (err) {
-        console.error(err);
-        res.status(500).json({ error: "Internal server error" });
-      } else {
-        const recommendations = JSON.parse(results[0]);
-        res.json(recommendations);
-      }
-    }
-  );
-});
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);

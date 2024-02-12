@@ -7,6 +7,7 @@ import Footer from "./Footer";
 import ProductPage from "./ProductPage";
 import CartPage from "./CartPage";
 import Header from "./Header";
+import ProductsByCategory from "./ProductsByCategory"
 
 function App() {
   const headerProps = {
@@ -26,6 +27,7 @@ function App() {
         <Route path="/products" element={<Products />} />
         <Route path="/cart" element={<CartPage />} />
         <Route path="/products/:id" element={<ProductPage></ProductPage>} />
+        <Route path="/type/:id/products" element={<ProductsByCategory></ProductsByCategory>} />
       </Routes>
       <Footer></Footer>
     </div>

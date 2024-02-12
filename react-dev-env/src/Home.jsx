@@ -14,15 +14,18 @@ const Home = () => {
     fetchType();
   }, []);
   console.log(type);
+
+ 
   return (
     <div>
       {/* <h1>Byte Categories</h1>; */}
       <section id="categories-list">
-        {type.map((product, index) => (
+        {type.map((category, index) => (
           <ImageCard
             key={index}
-            imageUrl={product.imageUrl}
-            name={product.typeName}
+            id={category.id}
+            imageUrl={category.imageUrl}
+            name={category.typeName}
           ></ImageCard>
         ))}
       </section>

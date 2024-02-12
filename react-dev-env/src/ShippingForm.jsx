@@ -1,7 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Axios from "axios";
+import { CartContext } from "./context/cart";
+import "./App.css";
 
 const ShippingForm = () => {
+  const { cartItems, getCartTotal, clearCart } = useContext(CartContext);
+  const cartTotal = getCartTotal();
   // shipping state
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -14,7 +18,7 @@ const ShippingForm = () => {
   const [expirationMonth, setExpirationMonth] = useState("");
   const [expirationYear, setExpirationYear] = useState("");
   const [securityCode, setSecurityCode] = useState("");
-
+  // message state
   const [message, setMessage] = useState("");
 
   //SHIPPING INFO
@@ -68,9 +72,9 @@ const ShippingForm = () => {
   };
 
   // Generate options for months (0-12)
-  const monthOptions = Array.from({ length: 13 }, (_, index) => (
+  const monthOptions = Array.from({ length: 12 }, (_, index) => (
     <option key={index} value={index}>
-      {index}
+      {index + 1}
     </option>
   ));
 
@@ -86,7 +90,6 @@ const ShippingForm = () => {
 
   const handleSecurityCodeChange = (event) => {
     const value = event.target.value;
-    // Replace each character with an asterisk to hide the digits
     const maskedValue = value.replace(/\d/g, "*");
     setSecurityCode(maskedValue);
   };
@@ -97,7 +100,7 @@ const ShippingForm = () => {
     setMessage("Your order has been submitted!");
     setTimeout(() => {
       setMessage("");
-    }, 5000); // 5000 milliseconds = 5 seconds
+    }, 5000);
 
     await Axios.post("http://localhost:3000/checkout", {
       firstName: firstName,
@@ -110,16 +113,28 @@ const ShippingForm = () => {
       expirationMonth: expirationMonth,
       expirationYear: expirationYear,
       securityCode: securityCode,
+      cartItems: cartItems,
+      cartTotal: cartTotal.toFixed(2),
     }).then((response) => {
       console.log(response.data);
     });
-    //  console.log(response.data)
+    clearCart();
+    setFirstName("");
+    setLastName("");
+    setAddress("");
+    setCity("");
+    setState("");
+    setZipCode("");
+    setCardNumber("");
+    setExpirationMonth("");
+    setExpirationYear("");
+    setSecurityCode("");
   };
 
   return (
     <form onSubmit={handleSubmit}>
       <div id="name-input-div">
-        <div className="payment-input-div name-div" id='first-name-div'>
+        <div className="payment-input-div name-div" id="first-name-div">
           <label htmlFor="first-name">First Name</label>
           <input
             type="text"
@@ -160,6 +175,7 @@ const ShippingForm = () => {
           value={state}
           onChange={(e) => setState(e.target.value)}
           required
+          placeholder="State"
         />
       </div>
       <div className="payment-input-div">
@@ -170,6 +186,7 @@ const ShippingForm = () => {
           value={city}
           onChange={(e) => setCity(e.target.value)}
           required
+          placeholder="City"
         />
       </div>
       <div className="payment-input-div">
@@ -197,7 +214,7 @@ const ShippingForm = () => {
         />
       </div>
       <div id="expiration-date-div">
-        <div className="payment-input-div">
+        <div className="payment-input-div exp-div">
           <label htmlFor="expirationMonth">Expiration Month</label>
           <select
             id="expirationMonth"
@@ -211,7 +228,7 @@ const ShippingForm = () => {
           </select>
         </div>
 
-        <div className="payment-input-div">
+        <div className="payment-input-div exp-div">
           <label htmlFor="expirationYear">Expiration Year</label>
           <select
             id="expirationYear"
@@ -241,7 +258,9 @@ const ShippingForm = () => {
       <button type="submit" className="cart-button" id="payment-btn">
         Submit
       </button>
-      <h3 className="pop-up-msg">{message}</h3>
+      <div id="msg-div">
+        <h3 className="pop-up-msg">{message}</h3>
+      </div>
     </form>
   );
 };

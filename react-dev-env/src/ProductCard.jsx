@@ -4,14 +4,13 @@ const ProductCard = ({ id, name, price, inStock, imageUrl }) => {
   const navigate = useNavigate();
   return (
     <div id="product-card-div">
-      <div id="image-overlay-div">
-        <img
-          id="product-card-img"
-          src={imageUrl}
-          onClick={() => {
-            navigate(`/products/${id}`);
-          }}
-        ></img>
+      <div
+        id="image-overlay-div"
+        onClick={() => {
+          navigate(`/products/${id}`);
+        }}
+      >
+        <img id="product-card-img" src={imageUrl}></img>
         <div className={inStock ? "img-in-stock" : "img-out-stock"}>
           Out of Stock
         </div>
